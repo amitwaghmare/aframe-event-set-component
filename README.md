@@ -10,8 +10,8 @@ The Event Set component can register multiple event handlers that set multiple
 properties. Comma-delimited syntax:
 
 ```html
-<a-entity event-set="on: click; material.color: red; scale: 2 2 2,
-                     on: mouseenter: material.color: blue">
+<a-entity event-set="_event: click; material.color: red; scale: 2 2 2,
+                     _event: mouseenter: material.color: blue">
 ```
 
 | Property | Description                                           | Default Value |
@@ -40,8 +40,8 @@ Install and use by directly including the [browser files](dist):
 <body>
   <a-scene>
     <a-entity geometry="primitive: box" material="color: green"
-              event-set="on: click; material.color: red; scale: 2 2 2,
-                         on: mouseenter: material.color: blue"></a-entity>
+              event-set="_event: click; material.color: red; scale: 2 2 2,
+                         _event: mouseenter: material.color: blue"></a-entity>
   </a-scene>
 </body>
 ```
