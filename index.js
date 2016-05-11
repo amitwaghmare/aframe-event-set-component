@@ -61,16 +61,15 @@ AFRAME.registerComponent('event-set', {
       // Set event listener using `_event`.
       var event = obj._event;
       var target = obj._target;
-      eventListeners.push([event, handler]);
-
-      // Rest of the properties will describe what properties to set.
       delete obj._event;
       delete obj._target;
 
-      function handler () {
-        // Decide the target to `setAttribute` on.
-        var targetEl = target ? el.sceneEl.querySelector(target) : el;
+      // Decide the target to `setAttribute` on.
+      var targetEl = target ? el.sceneEl.querySelector(target) : el;
 
+      eventListeners.push([event, handler]);
+
+      function handler () {
         // Get properties to set.
         var setAttributeArgSets = [];
         Object.keys(obj).forEach(function buildSetAttributeArgs (attr) {
