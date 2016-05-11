@@ -105,16 +105,17 @@
 
 	    function addEventListener (obj) {
 	      // Set event listener using `_event`.
-	      eventListeners.push([obj._event, handler]);
+	      var event = obj._event;
+	      var target = obj._target;
+	      eventListeners.push([event, handler]);
+
+	      // Rest of the properties will describe what properties to set.
+	      delete obj._event;
+	      delete obj._target;
 
 	      function handler () {
 	        // Decide the target to `setAttribute` on.
-	        var target = obj._target;
 	        var targetEl = target ? el.sceneEl.querySelector(target) : el;
-
-	        // Rest of the properties will describe what properties to set.
-	        delete obj._event;
-	        delete obj._target;
 
 	        // Get properties to set.
 	        var setAttributeArgSets = [];

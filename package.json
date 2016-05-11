@@ -1,6 +1,6 @@
 {
   "name": "aframe-event-set-component",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Event Set component for A-Frame.",
   "main": "index.js",
   "scripts": {
