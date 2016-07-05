@@ -1,17 +1,18 @@
 ## aframe-event-set-component
 
 An [A-Frame](https://aframe.io) component to register event listeners that set
-properties. Intended to be an alternative to the undocumented Declarative
-Events API in A-Frame 0.2.0.
+properties. Replacement for the undocumented Declarative Events API in A-Frame
+0.2.0.
 
 ### Properties
 
 The Event Set component can register multiple event handlers that set multiple
-properties. Comma-delimited syntax:
+properties. Use double-underscores (`__`) to namespace individual instances of
+the component:
 
 ```html
-<a-entity event-set="_event: click; material.color: red; scale: 2 2 2,
-                     _event: mouseenter: material.color: blue">
+<a-entity event-set__1="_event: click; material.color: red; scale: 2 2 2,
+          event-set__2="_event: mouseenter; material.color: blue">
 ```
 
 | Property | Description                                           | Default Value |
@@ -33,15 +34,15 @@ Install and use by directly including the [browser files](dist):
 ```html
 <head>
   <title>My A-Frame Scene</title>
-  <script src="https://aframe.io/releases/0.2.0/aframe.min.js"></script>
+  <script src="https://aframe.io/releases/0.3.0/aframe.min.js"></script>
   <script src="https://rawgit.com/ngokevin/aframe-event-set-component/master/dist/aframe-event-set-component.min.js"></script>
 </head>
 
 <body>
   <a-scene>
     <a-entity geometry="primitive: box" material="color: green"
-              event-set="_event: click; material.color: red; scale: 2 2 2,
-                         _event: mouseenter: material.color: blue"></a-entity>
+              event-set__1="_event: click; material.color: red; scale: 2 2 2"
+              event-set__2="_event: mouseenter; material.color: blue"></a-entity>
   </a-scene>
 </body>
 ```
