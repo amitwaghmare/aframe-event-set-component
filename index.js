@@ -8,7 +8,16 @@ if (typeof AFRAME === 'undefined') {
 AFRAME.registerComponent('event-set', {
   schema: {
     default: '',
-    parse: styleParser.parse
+    parse: function (value) {
+      var obj = styleParser.parse(value);
+      // Convert camelCase keys from styleParser to hyphen.
+      var convertedObj = {};
+      Object.keys(obj).forEach(function (key) {
+        var hyphened = key.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase();
+        convertedObj[hyphened] = obj[key];
+      });
+      return convertedObj;
+    }
   },
 
   multiple: true,
