@@ -1,8 +1,9 @@
 {
   "name": "aframe-event-set-component",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Component to set properties in response to events.",
   "main": "index.js",
+  "browser": "dist/aframe-event-set-component.min.js",
   "scripts": {
     "build": "browserify examples/main.js -o examples/build.js",
     "dev": "budo examples/main.js:build.js --dir examples --port 8000 --live --open",
