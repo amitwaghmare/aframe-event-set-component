@@ -1,10 +1,7 @@
 ## aframe-event-set-component
 
-> If you are using A-Frame 0.2.0, see the older [0.2.0 version](https://github.com/ngokevin/aframe-event-set-component/tree/v0.2.0) of this component.
-
 An [A-Frame](https://aframe.io) component to register event listeners that set
-properties. Replacement for the undocumented Declarative Events API in A-Frame
-0.2.0.
+properties. Replacement for old undocumented Declarative Events API.
 
 ### Properties
 
