@@ -39,9 +39,10 @@ Install and use by directly including the [browser files](dist):
 
 <body>
   <a-scene>
-    <a-entity geometry="primitive: box" material="color: green"
-              event-set__1="_event: click; material.color: red; scale: 2 2 2"
-              event-set__2="_event: mouseenter; material.color: blue"></a-entity>
+    <a-box color="green"
+           event-set__1="_event: click; material.color: red; scale: 2 2 2"
+           event-set__2="_event: mouseenter; material.color: blue"></a-box>
+    <a-camera><a-cursor></a-cursor></a-camera>
   </a-scene>
 </body>
 ```
